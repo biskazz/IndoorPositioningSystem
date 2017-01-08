@@ -2,11 +2,12 @@ package com.nellymincheva.indoorpositioningsystem;
 
 public class Record{
     public int rssi;
-    public String beaconMac;
+    public int i,j;
 
-    public Record(int rssi, String beaconMac){
+    public Record(int i, int j, int rssi){
         this.rssi = rssi;
-        this.beaconMac = beaconMac;
+        this.i = i;
+        this.j = j;
     }
 }
 
