@@ -22,7 +22,6 @@ public class SettingsActivity extends PreferenceActivity
         // updated when the preference changes.
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_room_width)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_room_height)));
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_grid_size)));
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_1_mac)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_1_x)));
@@ -35,10 +34,6 @@ public class SettingsActivity extends PreferenceActivity
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_3_mac)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_3_x)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_3_y)));
-
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_4_mac)));
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_4_x)));
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_beacon_4_y)));
 
 
     }

@@ -1,171 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/colorPrimary"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.nellymincheva.indoorpositioningsystem.MainActivity">
 
-    <android.support.v4.widget.NestedScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:background="@color/colorPrimary"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            tools:context="com.nellymincheva.indoorpositioningsystem.MainActivity">
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
+                android:layout_height="match_parent">
 
-                <SearchView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:background="#ffffff"
+                    android:layout_height="400dp"
+                    android:id="@+id/room">
 
-                <Button
-                    android:text="Add venue"
+                    <ImageView
+                        android:id="@+id/imgView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@android:color/white"
+                        android:scaleType="fitXY">
+                    </ImageView>
+
+                    <ImageView
+                        app:srcCompat="@mipmap/beacon_icon"
+                        android:id="@+id/beacon1"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#beffbb33" />
+                    <ImageView
+                        app:srcCompat="@mipmap/beacon_icon"
+                        android:id="@+id/beacon2"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#beff8800" />
+
+                    <ImageView
+                        app:srcCompat="@mipmap/beacon_icon"
+                        android:id="@+id/beacon3"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="#be99cc00" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_launcher"
+                        android:id="@+id/user_icon"
+                        android:layout_below="@+id/beacon3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="86dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:text="Bluetooth is OFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/add_venue_button"
-                    android:onClick="onClick" />
+                    android:id="@+id/main_activity_text_view"
+                    android:textSize="20sp" />
 
-                <ScrollView
-                    android:layout_width="fill_parent"
+                <TextView
+                    android:text=""
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/scrollView"
-                    android:fillViewport="true">
+                    android:id="@+id/beacon1Info"
+                    android:textSize="20sp" />
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <TextView
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/beacon2Info"
+                    android:textSize="20sp" />
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:background="#ffffff"
-                            android:layout_height="400dp"
-                            android:id="@+id/room">
-
-                            <ImageView
-                                android:id="@+id/imgView"
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent"
-                                android:background="@android:color/white"
-                                android:scaleType="fitXY"></ImageView>
-
-                            <com.nellymincheva.indoorpositioningsystem.GridView
-                                android:id="@+id/grid_view"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent" />
-
-                            <ImageView
-                                app:srcCompat="@mipmap/beacon1"
-                                android:id="@+id/beacon1"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:background="#B5DEE3" />
-
-                            <ImageView
-                                app:srcCompat="@mipmap/beacon2"
-                                android:id="@+id/beacon2"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:background="#B5DEE3" />
-
-                            <ImageView
-                                app:srcCompat="@mipmap/beacon3"
-                                android:id="@+id/beacon3"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:background="#B5DEE3" />
-
-                            <ImageView
-                                app:srcCompat="@mipmap/beacon4"
-                                android:id="@+id/beacon4"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:background="#B5DEE3" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@mipmap/ic_launcher"
-                                android:id="@+id/user_icon"
-                                android:layout_below="@+id/beacon3"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginTop="86dp" />
+                <TextView
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/beacon3Info"
+                    android:textSize="20sp" />
 
 
-                        </RelativeLayout>
 
-
-                        <CheckBox
-                            android:text="Show Grid"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/showGrid"
-                            android:checked="true" />
-
-
-                        <TextView
-                            android:text=""
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/user_logged_in"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:text="Bluetooth OFF or not all beacons in range"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/userPositionInfo"
-                            android:textSize="20sp" />
-
-
-                        <TextView
-                            android:text=""
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/beacon1Info"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:text=""
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/beacon2Info"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:text=""
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/beacon3Info"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:text=""
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/beacon4Info"
-                            android:textSize="20sp" />
-
-
-                    </LinearLayout>
-
-                </ScrollView>
             </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
-        </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
